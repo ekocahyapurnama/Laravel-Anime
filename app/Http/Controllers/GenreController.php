@@ -48,4 +48,31 @@ class GenreController extends Controller
         // alihkan halaman ke halaman siswa
         return redirect('/genre');
     }
+
+    public function edit($id)
+    {
+
+        $genre = DB::table('genre')->where('id_gen', $id)->get();
+
+        return view('/genreedit', ['genre' => $genre]);
+    }
+
+    public function update(Request $request)
+    {
+
+        DB::table('genre')->where('id_gen',$request->id)->update([
+            'genre' => $request->genre,
+        ]);
+
+        return redirect('/genre');
+    }
+
+    public function hapus($id)
+    {
+
+        DB::table('genre')->where('id_gen',$id)->delete();
+
+
+        return redirect('/genre');
+    }
 }

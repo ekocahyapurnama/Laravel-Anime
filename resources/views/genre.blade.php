@@ -1,7 +1,7 @@
 @extends('layouts.adminlayout')
 
 @section('content')
-    <div class="container">
+    <div>
             <div class="card mt-5">
                 <div class="card-header text-center">
                     GENRE
@@ -24,8 +24,8 @@
 								<td>{{ $g->id_gen }}</td>
 								<td>{{ $g->genre }}</td>
 								<td>
-									<a href="#" class="btn btn-warning">Edit</a>
-									<a href="#" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data Genre?');">Hapus</a>
+									<a href="/genreedit/edit/{{ $g->id_gen }}" class="btn btn-warning">Edit</a>
+									<a href="/genre/hapus/{{$g->id_gen}}" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data Genre?');">Hapus</a>
 								</td>
 							</tr>
 							@endforeach

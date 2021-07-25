@@ -24,8 +24,8 @@
 								<td>{{ $s->id_stud }}</td>
 								<td>{{ $s->nama }}</td>
 								<td>
-									<a href="#" class="btn btn-warning">Edit</a>
-									<a href="#" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data Studio?');">Hapus</a>
+									<a href="/studioedit/edit/{{ $s->id_stud }}" class="btn btn-warning">Edit</a>
+									<a href="/studioedit/hapus/{{ $s->id_stud }}" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data Studio?');">Hapus</a>
 								</td>
 							</tr>
 							@endforeach

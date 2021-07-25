@@ -32,11 +32,17 @@ Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index']);
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'genre']);
 Route::get('/tambahgenre', [App\Http\Controllers\GenreController::class, 'tambah']);
 Route::post('/genre/store', [App\Http\Controllers\GenreController::class, 'store']);
+Route::get('/genreedit/edit/{id}', [App\Http\Controllers\GenreController::class, 'edit']);
+Route::post('/genre/update', [App\Http\Controllers\GenreController::class, 'update']);
+Route::get('/genre/hapus/{id}', [App\Http\Controllers\GenreController::class, 'hapus']);
 
 Route::get('/studio', [App\Http\Controllers\StudioController::class, 'index']);
 Route::get('/studio', [App\Http\Controllers\StudioController::class, 'studio']);
 Route::get('/tambahstudio', [App\Http\Controllers\StudioController::class, 'tambah']);
 Route::post('/studio/store', [App\Http\Controllers\StudioController::class, 'store']);
+Route::get('/studioedit/edit/{id}', [App\Http\Controllers\StudioController::class, 'edit']);
+Route::post('/studio/update', [App\Http\Controllers\StudioController::class, 'update']);
+Route::get('/studio/hapus/{id}', [App\Http\Controllers\StudioController::class, 'hapus']);
 
 Route::get('/pengunjung', function () { return view('home'); })->middleware(['checkRole:pegunjung,admin']);
 

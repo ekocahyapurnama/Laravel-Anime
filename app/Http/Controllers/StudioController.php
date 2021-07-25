@@ -48,4 +48,31 @@ class StudioController extends Controller
         // alihkan halaman ke halaman siswa
         return redirect('/studio');
     }
+
+    public function edit($id)
+    {
+
+        $studio = DB::table('studio')->where('id_stud', $id)->get();
+
+        return view('/studioedit', ['studio' => $studio]);
+    }
+
+    public function update(Request $request)
+    {
+
+        DB::table('studio')->where('id_stud',$request->id)->update([
+            'studio' => $request->nama,
+        ]);
+
+        return redirect('/studio');
+    }
+
+    public function hapus($id)
+    {
+
+        DB::table('studio')->where('id_stud',$id)->delete();
+
+
+        return redirect('/studio');
+    }
 }
