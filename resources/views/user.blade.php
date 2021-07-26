@@ -7,7 +7,7 @@
                     USER
                 </div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-primary">Input USER Baru</a>
+                    <a href="/user/tambahuser" class="btn btn-primary">Input USER Baru</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">
@@ -26,8 +26,8 @@
 								<td>{{ $u->email }}</td>
 								<td>{{ $u->role }}</td>
 								<td>
-									<a href="#" class="btn btn-warning">Edit</a>
-									<a href="#" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data User?');">Hapus</a>
+									<a href="/useredit/edit/{{ $u->id }}" class="btn btn-warning">Edit</a>
+									<a href="/user/hapus/{{ $u->id }}" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data User?');">Hapus</a>
 								</td>
 							</tr>
 							@endforeach

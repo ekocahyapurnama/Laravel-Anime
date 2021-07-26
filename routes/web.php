@@ -22,11 +22,19 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']);
 Route::get('/user', [App\Http\Controllers\AdminController::class, 'user']);
+Route::get('/tambahuser', [App\Http\Controllers\AdminController::class, 'create']);
+Route::post('/user/store', [App\Http\Controllers\AdminController::class, 'store']);
+Route::get('/useredit/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit']);
+Route::post('/user/update', [App\Http\Controllers\AdminController::class, 'update']);
+Route::get('/user/hapus/{id}', [App\Http\Controllers\AdminController::class, 'hapus']);
 
 Route::get('/anime', [App\Http\Controllers\AnimeController::class, 'index']);
 Route::get('/anime', [App\Http\Controllers\AnimeController::class, 'anime']);
 Route::get('/tambahanime', [App\Http\Controllers\AnimeController::class, 'create']);
 Route::post('/anime/store', [App\Http\Controllers\AnimeController::class, 'store']);
+Route::get('/animeedit/edit/{id}', [App\Http\Controllers\AnimeController::class, 'edit']);
+Route::post('/anime/update', [App\Http\Controllers\AnimeController::class, 'update']);
+Route::get('/anime/hapus/{id}', [App\Http\Controllers\AnimeController::class, 'hapus']);
 
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index']);
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'genre']);

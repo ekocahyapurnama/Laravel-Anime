@@ -31,13 +31,13 @@
 								<td>{{ $a->genre }}</td>
                                 <td>{{ $a->rating }}</td>
 								<td>{{ $a->studio }}</td>
-								<td>{{ $a->sinopsis }}</td>
+								<td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 50ch;">{{ $a->sinopsis }}</td>
                                 <td class="text-center">
                                     <img src="{{ Storage::url('images/').$a->gambar }}" class="rounded" style="width: 150px">
                                 </td>
 								<td>
-									<a href="#" class="btn btn-warning">Edit</a>
-									<a href="#" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data Anime?');">Hapus</a>
+									<a href="/animeedit/edit/{{ $a->id_anim }}" class="btn btn-warning">Edit</a>
+									<a href="/anime/hapus/{{ $a->id_anim }}" class="btn btn-danger" onclick="return confirm('Yakin Hapus Data Anime?');">Hapus</a>
 								</td>
 							</tr>
 							@endforeach

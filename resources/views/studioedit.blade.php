@@ -14,7 +14,7 @@
 
                 @foreach($studio as $s)
                     <form method="post" action="/studio/update">
-                        
+
 
                         {{ csrf_field() }}
 
