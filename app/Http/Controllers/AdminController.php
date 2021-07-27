@@ -69,7 +69,7 @@ class AdminController extends Controller
         DB::table('users')->where('id',$request->id)->update([
             'name'     => $request->name,
             'email'   => $request->email,
-            'role'     => $request->role,
+            'role'     => $request->role
         ]);
 
         return redirect('/user');

@@ -43,12 +43,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="role">Pilih Role</label>
-                        <select id="role" name="role">
-                            <option value="admin">admin</option>
-                            <option value="pengunjung">pengunjung</option>
-                        </select>
-                        <input type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role', $u -> role) }}">
+                        <p>Pilih Role :</p>
+                        <input type="radio" id="role1" name="role" value="{{ old('role', $u -> role) }}">
+                        <label for="role1">Admin</label><br>
+                        <input type="radio" id="role2" name="role" value="{{ old('role', $u -> role) }}">
+                        <label for="role2">Pengunjung</label><br>
 
                         <!-- error message untuk title -->
                         @error('role')
