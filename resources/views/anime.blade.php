@@ -7,7 +7,18 @@
                     ANIME
                 </div>
                 <div class="card-body">
+                    <form class="form-inline md-form mr-auto mb-4" action="/anime/cari" method="GET">
+                        <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Cari Anime .." value="{{ old('anime') }}">
+                        <input class="btn btn-outline-primary" type="submit" value="CARI">
+                    </form>
+                    @if (count($anime))
+                    @else
+                        <div class="alert alert-danger" role="alert">
+                            Oops.. Data Tidak Ditemukan
+                        </div>
+                    @endif
                     <a href="/tambahanime" class="btn btn-primary">Input ANIME Baru</a>
+                    <a href="/cetakanime" class="btn btn-primary">Laporan</a>
                     <br/>
                     <br/>
                     <table class="table table-bordered table-hover table-striped">
@@ -31,7 +42,7 @@
 								<td>{{ $a->genre }}</td>
                                 <td>{{ $a->rating }}</td>
 								<td>{{ $a->studio }}</td>
-								<td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 50ch;">{{ $a->sinopsis }}</td>
+								<td style="overflow: hidden;  text-overflow: ellipsis; max-width: 50ch;">{{ $a->sinopsis }}</td>
                                 <td class="text-center">
                                     <img src="{{ Storage::url('images/').$a->gambar }}" class="rounded" style="width: 150px">
                                 </td>

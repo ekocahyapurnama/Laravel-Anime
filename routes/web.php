@@ -35,6 +35,8 @@ Route::post('/anime/store', [App\Http\Controllers\AnimeController::class, 'store
 Route::get('/animeedit/edit/{id}', [App\Http\Controllers\AnimeController::class, 'edit']);
 Route::post('/anime/update', [App\Http\Controllers\AnimeController::class, 'update']);
 Route::get('/anime/hapus/{id}', [App\Http\Controllers\AnimeController::class, 'hapus']);
+Route::get('/anime/cari', [App\Http\Controllers\AnimeController::class, 'cari']);
+Route::get('/cetakanime', [App\Http\Controllers\AnimeController::class, 'cetak']);
 
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index']);
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'genre']);

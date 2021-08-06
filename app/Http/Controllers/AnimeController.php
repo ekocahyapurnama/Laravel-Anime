@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use PDF;
 
 class AnimeController extends Controller
 {
@@ -140,6 +141,31 @@ class AnimeController extends Controller
 
 
         return redirect('/anime');
+    }
+
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $anime = DB::table('anime')
+            ->where('judul','like',"%".$cari."%")
+            ->orWhere('sinopsis', 'like', "%".$cari."%")
+            ->paginate();
+
+        // mengirim data pegawai ke view index
+        return view('/anime',['anime' => $anime]);
+
+    }
+
+    public function cetak()
+    {
+        $anime = DB::table('anime')->get();
+
+        $pdf = PDF::loadview('/cetakanime',['anime'=>$anime])->setPaper('A4','potrait');;
+        //return $pdf->download('laporan-pegawai.pdf');
+        return $pdf->stream();
     }
 
 }
