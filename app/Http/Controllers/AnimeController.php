@@ -168,4 +168,12 @@ class AnimeController extends Controller
         return $pdf->stream();
     }
 
+    public function detail($id)
+    {
+
+        $anime = DB::table('anime')->where('id_anim', $id)->get();
+
+        return view('/animedetail', ['anime' => $anime]);
+    }
+
 }

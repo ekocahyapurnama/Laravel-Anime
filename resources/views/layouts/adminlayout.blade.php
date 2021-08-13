@@ -27,6 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
@@ -66,11 +67,10 @@
                                         <li><a href="/anime">Anime</a></li>
                                         <li><a href="/genre">Genre</a></li>
                                         <li><a href="/studio">Studio</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li>
                                 <li class="#"><a href="/admin">Admin</a></li>
-                                <li><a href="#">Contacts</a></li>
+                                <li><a href="/kontak">Contacts</a></li>
                             </ul>
                         </nav>
                     </div>

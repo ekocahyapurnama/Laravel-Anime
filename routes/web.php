@@ -20,6 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'anime']);
+Route::get('/kontak', [App\Http\Controllers\HomeController::class, 'kontak']);
+
+
+Route::get('/', [App\Http\Controllers\WelkamController::class, 'animewel']);
+
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']);
 Route::get('/user', [App\Http\Controllers\AdminController::class, 'user']);
 Route::get('/tambahuser', [App\Http\Controllers\AdminController::class, 'create']);
@@ -27,6 +34,7 @@ Route::post('/user/store', [App\Http\Controllers\AdminController::class, 'store'
 Route::get('/useredit/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit']);
 Route::post('/user/update', [App\Http\Controllers\AdminController::class, 'update']);
 Route::get('/user/hapus/{id}', [App\Http\Controllers\AdminController::class, 'hapus']);
+
 
 Route::get('/anime', [App\Http\Controllers\AnimeController::class, 'index']);
 Route::get('/anime', [App\Http\Controllers\AnimeController::class, 'anime']);
@@ -37,6 +45,8 @@ Route::post('/anime/update', [App\Http\Controllers\AnimeController::class, 'upda
 Route::get('/anime/hapus/{id}', [App\Http\Controllers\AnimeController::class, 'hapus']);
 Route::get('/anime/cari', [App\Http\Controllers\AnimeController::class, 'cari']);
 Route::get('/cetakanime', [App\Http\Controllers\AnimeController::class, 'cetak']);
+Route::get('/animedetail/detail/{id}', [App\Http\Controllers\AnimeController::class, 'detail']);
+
 
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'index']);
 Route::get('/genre', [App\Http\Controllers\GenreController::class, 'genre']);
